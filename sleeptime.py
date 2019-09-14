@@ -46,7 +46,7 @@ app.layout = html.Div(children=[
 
     html.Label('Shown Prefectures:'),
     dcc.Dropdown(
-        id='select_prefectures',
+        id='select-prefectures',
         options=options,
         value=['全国', '北海道', '青森県'],
         multi=True
@@ -71,7 +71,7 @@ app.layout = html.Div(children=[
 
 @app.callback(
     Output('prefrectue-sleeptime-graph', 'figure'),
-    [Input('select_prefectures', 'value')])
+    [Input('select-prefectures', 'value')])
 def update_figure(selected_prefectures):
     _data = [d for d in data if d['name'] in selected_prefectures]
 
